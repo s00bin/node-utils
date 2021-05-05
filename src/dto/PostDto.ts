@@ -6,9 +6,6 @@ class PostDto {
 
   @IsNotEmpty()
   content: string;
-
-  @IsNotEmpty()
-  author: string;
 }
 
 export default PostDto;

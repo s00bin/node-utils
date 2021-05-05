@@ -39,8 +39,8 @@ class UserController implements Controller {
 
     public login = async (req: Request, res: Response) => {
         const loginDto = req.body;
-        const user = await this.userService.login(loginDto);
-        if (!user) {
+        const token = await this.userService.login(loginDto);
+        if (!token) {
             return res.json({
                 success: false,
                 msg: "아이디 또는 비밀번호가 틀렸습니다.",
@@ -50,7 +50,8 @@ class UserController implements Controller {
 
         return res.json({
             success: true,
-            msg: "OK"
+            msg: "OK",
+            data: token
         });
     }
 
