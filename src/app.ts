@@ -29,7 +29,7 @@ class App {
 
   // 데이터베이스 설정
   private initializeDatabase() {
-    createDatabaseConnection().then(_ => Log.info("Database connection successful"));
+    createDatabaseConnection().then((_) => Log.info("Database connection successful"));
   }
 
   private initializeMiddlewares(): void {

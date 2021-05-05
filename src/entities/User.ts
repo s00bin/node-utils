@@ -6,12 +6,12 @@ import {
   OneToMany,
   PrimaryGeneratedColumn,
   Unique,
-  UpdateDateColumn
+  UpdateDateColumn,
 } from "typeorm";
 import * as bcrypt from "bcrypt";
 import Post from "./Post";
-import {generateAccessToken} from "../middlewares/AuthMiddleware";
-import {TokenData} from "../interfaces/TokenData";
+import { generateAccessToken } from "../middlewares/AuthMiddleware";
+import { TokenData } from "../interfaces/TokenData";
 
 @Entity({ name: "user" })
 @Unique(["email"])

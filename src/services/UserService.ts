@@ -4,7 +4,6 @@ import { TokenData } from "../interfaces/TokenData";
 import { getRepository } from "typeorm";
 
 class UserService {
-
   // 회원가입
   public async join(userDto: UserDto): Promise<User> {
     const user = new User();
@@ -18,10 +17,10 @@ class UserService {
   // 로그인
   public async login(loginDto: LoginDto): Promise<TokenData> {
     const user = await getRepository(User)
-        .createQueryBuilder("user")
-        .addSelect("user.password")
-        .where("user.email = :email", { email: loginDto.email })
-        .getOne();
+      .createQueryBuilder("user")
+      .addSelect("user.password")
+      .where("user.email = :email", { email: loginDto.email })
+      .getOne();
 
     if (!user) {
       return null;

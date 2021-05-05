@@ -1,8 +1,7 @@
-import {Request, Response, Router} from "express";
+import { Request, Response, Router } from "express";
 import Controller from "../interfaces/Controller";
 
 class HomeController implements Controller {
-
   public path = "/";
   public router = Router();
 
@@ -15,12 +14,11 @@ class HomeController implements Controller {
     this.router.get(`${this.path}health`, this.healthCheck);
   }
 
-
-  public async welcome(_:Request, res: Response) {
+  public async welcome(_: Request, res: Response) {
     return res.send("Welcome !");
   }
 
-  public healthCheck(_:Request, res: Response) {
+  public healthCheck(_: Request, res: Response) {
     return res.send(true);
   }
 }
