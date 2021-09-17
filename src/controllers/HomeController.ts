@@ -14,13 +14,13 @@ class HomeController implements Controller {
     this.router.get(`${this.path}health`, this.healthCheck);
   }
 
-  public async welcome(_: Request, res: Response) {
+  public welcome = (_: Request, res: Response) => {
     return res.send("Welcome !");
-  }
+  };
 
-  public healthCheck(_: Request, res: Response) {
+  public healthCheck = (_: Request, res: Response) => {
     return res.send(true);
-  }
+  };
 }
 
 export default HomeController;

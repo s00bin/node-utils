@@ -54,7 +54,7 @@ class UserController implements Controller {
     });
   };
 
-  public me = async (req: Request, res: Response) => {
+  public me = (req: Request, res: Response) => {
     return res.json({
       success: true,
       msg: "OK",
